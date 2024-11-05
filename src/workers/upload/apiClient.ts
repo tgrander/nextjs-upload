@@ -8,7 +8,7 @@ import {
 } from "./types";
 import { FatalError, RetryableError } from "@/lib/errors";
 
-import { CONFIG } from "@/lib/upload/config";
+import { CONFIG } from "./config";
 
 export class ApiClient {
   private baseUrl: string;

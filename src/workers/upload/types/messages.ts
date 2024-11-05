@@ -165,7 +165,7 @@ export function isWorkerInboundMessage(
     typeof message === "object" &&
     message !== null &&
     "type" in message &&
-    typeof (message as any).type === "string" &&
+    typeof (message as { type: string }).type === "string" &&
     [
       "START_UPLOAD",
       "PAUSE_UPLOAD",
@@ -174,7 +174,7 @@ export function isWorkerInboundMessage(
       "GET_UPLOAD_STATUS",
       "GET_ACTIVE_UPLOADS",
       "HEARTBEAT",
-    ].includes((message as any).type)
+    ].includes((message as { type: string }).type)
   );
 }
 
@@ -185,7 +185,7 @@ export function isWorkerOutboundMessage(
     typeof message === "object" &&
     message !== null &&
     "type" in message &&
-    typeof (message as any).type === "string" &&
+    typeof (message as { type: string }).type === "string" &&
     [
       "UPLOAD_PROGRESS",
       "UPLOAD_COMPLETE",
@@ -197,6 +197,6 @@ export function isWorkerOutboundMessage(
       "RETRYING_CHUNK",
       "INITIATE_UPLOAD_RESPONSE",
       "LOG",
-    ].includes((message as any).type)
+    ].includes((message as { type: string }).type)
   );
 }

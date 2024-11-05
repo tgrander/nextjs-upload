@@ -2,8 +2,8 @@
 
 import { useRef, useState } from "react";
 
-import { cn } from "@/lib/utils";
 import { IconUpload } from "@tabler/icons-react";
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useDropzone } from "react-dropzone";
 
@@ -38,7 +38,7 @@ export const FileUpload = ({
 
   const handleFileChange = (newFiles: File[]) => {
     setFiles((prevFiles) => [...prevFiles, ...newFiles]);
-    onChange && onChange(newFiles);
+    onChange?.(newFiles);
   };
 
   const handleClick = () => {

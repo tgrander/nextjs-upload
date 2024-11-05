@@ -147,8 +147,7 @@ export class UploadHandler {
     uploadState: UploadState,
     abortSignal: AbortSignal
   ): Promise<void> {
-    const { file, key, uploadId, contentId, partSize, maxConcurrentUploads } =
-      uploadState;
+    const { file, key, uploadId, contentId, partSize } = uploadState;
 
     if (!contentId) {
       throw new Error("Upload state has no contentId");
